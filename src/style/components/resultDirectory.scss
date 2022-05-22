@@ -1,0 +1,19 @@
+.resultDirectory {
+    height: 100%;
+    overflow: scroll;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    &__fullAvaiavbleCount {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        span {
+            font-weight: bold;
+        }
+    }
+}

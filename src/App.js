@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import FullScreenMap from "./components/FullScreenMap";
+import MainSection from "./components/MainSection";
+import { mock } from "./components/mock";
+import fetcher from "./utils/fetcher";
+
+
+
 
 function App() {
+  const [resultItems, setResultItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
+
+  const [currentMapPosition, setCurrentMapPosition] = useState([]);
+
+
+  const hoverOnItemsHandler = ({ latitude , longitude }) => {
+    setCurrentMapPosition([latitude , longitude])
+  }
+
+  useEffect(() => {
+
+  } , []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainSection hoverOnItemsHandler={hoverOnItemsHandler} searchResultsItem={mock.businesses} searchValue={searchValue} setSearchValue={setSearchValue} />
+      <FullScreenMap currentMapPosition={currentMapPosition} defaultMapPosition={[mock.region.center.latitude , mock.region.center.longitude]} locationsMarks={mock.businesses.map(el => el.coordinates)} />
     </div>
   );
 }

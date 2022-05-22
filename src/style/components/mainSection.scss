@@ -1,0 +1,25 @@
+.mainSection {   
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: 500px;
+    z-index: 2;
+    height: 79px;
+    transform: translateY(-50%);
+    overflow: hidden;
+    background-color: white;
+
+    border-radius: $radius;
+    transition: .3s;
+
+
+    background-color: #ffffff75;
+    border-radius: $radius;   
+    backdrop-filter: blur(35px);
+
+
+    &--getFullHeigh {
+        height: 95vh;
+
+    }
+}
