@@ -1,4 +1,6 @@
 const BASE_URL_PATH = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/";
+
+// side note : the API_Key may can be included in env.
 export const API_KEY = "Bearer kqxvp9If8Wi2s-OEoiLPuEPQOBbsBxtC-Ng4DId5waTwoY9NYClZpwJYzmZ_5Cbzp6saVwMRkwCohFbqXz6Po-ipoYQbCchGnRM9PTMsdOItYp3P_pFHXwudWEGLYnYx"
 
 async function fetcher(requestPath) {
