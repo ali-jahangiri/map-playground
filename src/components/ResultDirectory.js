@@ -2,7 +2,7 @@ import ResultItem from "./ResultItem";
 
 import { ReactComponent as FreshIcon } from "../assets/icons/confetti.svg";
 
-const ResultDirectory = ({ items , itemsLength , hoverOnItemsHandler }) => (
+const ResultDirectory = ({ items , itemsLength , hoverOnItemsHandler , selectItemHandler }) => (
     <div className="resultDirectory">
         {
             !!items.length && <p className="resultDirectory__fullAvaiavbleCount">
@@ -20,7 +20,13 @@ const ResultDirectory = ({ items , itemsLength , hoverOnItemsHandler }) => (
         }
         {
             items.map((el , i) => (
-                <ResultItem {...el} key={i} renderKeyCount={i + 1} onHover={hoverOnItemsHandler} />
+                <ResultItem 
+                    {...el} 
+                    key={i} 
+                    renderKeyCount={i + 1} 
+                    onHover={hoverOnItemsHandler}
+                    onSelectItem={selectItemHandler}
+                />
             ))
         }
     </div>

@@ -1,6 +1,7 @@
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
+import { ReactComponent as BackIcon } from "../assets/icons/arrow-small-left.svg";
 
-const Nav = ({ setSearchValue , searchValue , onFocus , loading }) => {
+const Nav = ({ setSearchValue , searchValue , onFocus , loading , isInDetailsMode , goBackToDirectoryHandler }) => {
 
 
     const onSearchValueChange = ({ target : { value } }) => {
@@ -9,7 +10,10 @@ const Nav = ({ setSearchValue , searchValue , onFocus , loading }) => {
 
     return (
         <div className="nav">
-            <SearchIcon className={`nav__search ${loading ? "nav__search--loading" : ""}`} />
+            <SearchIcon className={`nav__search ${isInDetailsMode ? "nav__search--hide" : ""} ${loading ? "nav__search--loading" : ""}`} />
+            <div onClick={goBackToDirectoryHandler} className={`nav__back ${isInDetailsMode ? "nav__back--visible" : ""}`} >
+                <BackIcon />
+            </div>
             <input
                 onFocus={() => onFocus(true)}
                 onChange={onSearchValueChange}

@@ -10,10 +10,11 @@ const ResultItem = ({
     location ,
     coordinates,
     onHover,
-    renderKeyCount
+    renderKeyCount,
+    onSelectItem
 }) => {
     return (
-        <div style={{ animationDelay : `${renderKeyCount * 100}ms` }} onMouseEnter={() => onHover(coordinates)} className="resultItem">
+        <div onClick={() => onSelectItem(id)} style={{ animationDelay : `${renderKeyCount * 100}ms` }} onMouseEnter={() => onHover(coordinates)} className="resultItem">
             <div>
                 <img alt="business-pic" src={image_url} />
             </div>

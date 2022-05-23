@@ -15,6 +15,14 @@ const DEFAULT_STATE = {
 }
 
 
+// NOTE : if you want to try the app, but you have problem in fetching and getting data, i recommend to set this variable to "true" to use mock and static data  
+const currentlyHaveTooManyRequestOrCannotGetResponseFromYelp = true;
+
+if(currentlyHaveTooManyRequestOrCannotGetResponseFromYelp) {
+  DEFAULT_STATE.result = mock
+}
+
+
 function App() {
 
   const [searchValue, setSearchValue] = useState("");

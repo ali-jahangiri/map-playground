@@ -3,6 +3,11 @@
     overflow: scroll;
     padding: 1rem;
     padding-bottom: 5rem;
+    position: relative;
+    transition: .6s cubic-bezier(0.77, 0, 0.175, 1);
+    left: 0;
+    width: 100%;
+    flex: 1 0 100%;
     
     &::-webkit-scrollbar {
         display: none;
