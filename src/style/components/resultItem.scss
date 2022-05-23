@@ -10,13 +10,14 @@
 .resultItem {
     width: 100%;
     display: flex;
-    margin-bottom: 2rem;
+    padding: 1rem;
     color: $textColor;
     min-height: 200px;
-    transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: .3s;
     cursor: pointer;
     opacity: 0;
     animation: fadeInItems .3s forwards alternate;
+    border-radius: $radius;
     
 
     img {
@@ -75,6 +76,6 @@
 
 
     &:hover {
-
+        background-color: #ffffff40;
     }
 }

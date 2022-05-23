@@ -7,9 +7,14 @@ const FullScreenMap = ({ locationsMarks = [] , defaultMapPosition , currentMapPo
             <Map maxZoom={16} minZoom={14} center={currentMapPosition} defaultCenter={defaultMapPosition} defaultZoom={14}>
                 {
                     locationsMarks.map((el , i) => (
-                        <Overlay  className={`fullScreenMap__overlayItem " ${currentMapPosition[0] === el.latitude && currentMapPosition[1] === el.longitude ? "fullScreenMap__overlayItem--active" : ""}`} width={50} key={i} anchor={[el.latitude , el.longitude]}>
+                        <Overlay 
+                            className={`fullScreenMap__overlayItem " ${currentMapPosition[0] === el.coordinates.latitude && currentMapPosition[1] === el.coordinates.longitude ? "fullScreenMap__overlayItem--active" : ""}`} 
+                            width={50} 
+                            key={i} 
+                            anchor={[el.coordinates.latitude , el.coordinates.longitude]}
+                        >
                             <div className="fullScreenMap__overlayItem__content">
-                                lroem
+                                {el.name}
                             </div>
                             <span className="fullScreenMap__overlayItem__dot" />
                         </Overlay>

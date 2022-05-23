@@ -1,6 +1,6 @@
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
 
-const Nav = ({ setSearchValue , searchValue , onFocus }) => {
+const Nav = ({ setSearchValue , searchValue , onFocus , loading }) => {
 
 
     const onSearchValueChange = ({ target : { value } }) => {
@@ -9,7 +9,7 @@ const Nav = ({ setSearchValue , searchValue , onFocus }) => {
 
     return (
         <div className="nav">
-            <SearchIcon />
+            <SearchIcon className={`nav__search ${loading ? "nav__search--loading" : ""}`} />
             <input
                 onFocus={() => onFocus(true)}
                 onChange={onSearchValueChange}

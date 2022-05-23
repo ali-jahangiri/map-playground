@@ -1,5 +1,5 @@
 const BASE_URL_PATH = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/";
-export const API_KEY = "Bearer 4BTjXRy1zRew5u6onySO4RSwvVro0QDJtjYyd1xoNKK9V9pGPyrcrIo2qXGEVybawmpA5Sxvj4sbCTDbcDkW0iSSV__lEC-U-fkm7CK0wlnfpPGmyVq71rZGvC2KYnYx"
+export const API_KEY = "Bearer kqxvp9If8Wi2s-OEoiLPuEPQOBbsBxtC-Ng4DId5waTwoY9NYClZpwJYzmZ_5Cbzp6saVwMRkwCohFbqXz6Po-ipoYQbCchGnRM9PTMsdOItYp3P_pFHXwudWEGLYnYx"
 
 async function fetcher(requestPath) {
     const res = await fetch(`${BASE_URL_PATH}${requestPath}`, {
